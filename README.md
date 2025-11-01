@@ -72,12 +72,12 @@ src/
 
 ## API Integration
 
-The blog fetches content from the ITU Blog CMS:
+The blog fetches content from the cognitor.dev CMS:
 
-**Endpoint:** `https://backend.staging.cognitor.dev/public/itublog/elements`
+**Endpoint:** `https://backend.cognitor.dev/public{siteselector}/elements`
 
 **Parameters:**
-- `type` - Content type filter (e.g., `itublog_news`)
+- `type` - Content type filter
 - `limit` - Number of posts to fetch (default: 10)
 - `skip` - Number of posts to skip (default: 0)
 
