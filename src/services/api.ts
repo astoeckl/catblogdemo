@@ -14,10 +14,11 @@ export interface BlogPostData {
   updated_at: string;
 }
 
-const API_URL = 'https://backend.staging.cognitor.dev/public/itublog/elements';
+const SITE = import.meta.env.VITE_SITE || 'itublog';
+const API_URL = `https://backend.staging.cognitor.dev/public/${SITE}/elements`;
 
 export async function fetchBlogPosts(limit: number = 10, skip: number = 0): Promise<BlogPostData[]> {
-  const response = await fetch(`${API_URL}?type=itublog_news&limit=${limit}&skip=${skip}`, {
+  const response = await fetch(`${API_URL}?type=${SITE}_news&limit=${limit}&skip=${skip}`, {
     headers: {
       'accept': 'application/json',
     },
